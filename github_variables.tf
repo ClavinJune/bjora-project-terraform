@@ -1,4 +1,4 @@
 variable "BJORA_PROJECT_TERRAFORM_SONAR_TOKEN" {
-  type = string
+  type      = string
   sensitive = true
 }
