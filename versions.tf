@@ -2,10 +2,10 @@ terraform {
   required_version = "~> 1.1.0"
 
   cloud {
-      organization = "bjora"
-      workspaces {
-          name = "bjora-project-terraform"
-      }
+    organization = "bjora"
+    workspaces {
+      name = "bjora-project-terraform"
+    }
   }
 
   required_providers {
