@@ -27,12 +27,12 @@ module "bjora-project-terraform-modules" {
   description        = "bjora project terraform modules"
   gitignore_template = "Terraform"
 
-  # plain_secrets = [
-  #   {
-  #     name  = "SONAR_TOKEN"
-  #     value = var.BJORA_PROJECT_TERRAFORM_SONAR_TOKEN
-  #   }
-  # ]
+  plain_secrets = [
+    {
+      name  = "SONAR_TOKEN"
+      value = var.BJORA_PROJECT_TERRAFORM_MODULES_SONAR_TOKEN
+    }
+  ]
 }
 
 module "bjora-project-golang" {
