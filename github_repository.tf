@@ -1,37 +1,36 @@
-resource "github_repository" "bjora-project" {
+module "bjora-project" {
+  source = "./modules/gh"
+
   name        = "bjora-project"
   description = "bjora project"
-
-  allow_merge_commit     = false
-  allow_rebase_merge     = false
-  allow_auto_merge       = false
-  delete_branch_on_merge = true
-  auto_init              = true
-  license_template       = "mit"
 }
 
-resource "github_repository" "bjora-project-terraform" {
-  name        = "bjora-project-terraform"
-  description = "bjora project terraform"
+module "bjora-project-terraform" {
+  source = "./modules/gh"
 
-  allow_merge_commit     = false
-  allow_rebase_merge     = false
-  allow_auto_merge       = false
-  delete_branch_on_merge = true
-  auto_init              = true
-  gitignore_template     = "Terraform"
-  license_template       = "mit"
+  name               = "bjora-project-terraform"
+  description        = "bjora project terraform"
+  gitignore_template = "Terraform"
+
+  plain_secrets = [
+    {
+      name  = "SONAR_TOKEN"
+      value = var.BJORA_PROJECT_TERRAFORM_SONAR_TOKEN
+    }
+  ]
 }
 
-resource "github_repository" "bjora-project-golang" {
-  name        = "bjora-project-golang"
-  description = "bjora project golang"
+module "bjora-project-golang" {
+  source = "./modules/gh"
 
-  allow_merge_commit     = false
-  allow_rebase_merge     = false
-  allow_auto_merge       = false
-  delete_branch_on_merge = true
-  auto_init              = true
-  gitignore_template     = "Go"
-  license_template       = "mit"
+  name               = "bjora-project-golang"
+  description        = "bjora project golang"
+  gitignore_template = "Go"
+
+  plain_secrets = [
+    {
+      name  = "SONAR_TOKEN"
+      value = var.BJORA_PROJECT_GOLANG_SONAR_TOKEN
+    }
+  ]
 }
