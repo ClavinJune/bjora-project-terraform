@@ -1,12 +1,12 @@
 module "bjora-project" {
-  source = "git@github.com:ClavinJune/bjora-project-terraform-modules.git?ref=v1.0.0"
+  source = "github.com/ClavinJune/bjora-project-terraform-modules.git?ref=v1.0.0"
 
   name        = "bjora-project"
   description = "bjora project"
 }
 
 module "bjora-project-terraform" {
-  source = "git@github.com:ClavinJune/bjora-project-terraform-modules.git?ref=v1.0.0"
+  source = "github.com/ClavinJune/bjora-project-terraform-modules.git?ref=v1.0.0"
 
   name               = "bjora-project-terraform"
   description        = "bjora project terraform"
@@ -21,7 +21,7 @@ module "bjora-project-terraform" {
 }
 
 module "bjora-project-terraform-modules" {
-  source = "git@github.com:ClavinJune/bjora-project-terraform-modules.git?ref=v1.0.0"
+  source = "github.com/ClavinJune/bjora-project-terraform-modules.git?ref=v1.0.0"
 
   name               = "bjora-project-terraform-modules"
   description        = "bjora project terraform modules"
@@ -36,7 +36,7 @@ module "bjora-project-terraform-modules" {
 }
 
 module "bjora-project-golang" {
-  source = "git@github.com:ClavinJune/bjora-project-terraform-modules.git?ref=v1.0.0"
+  source = "github.com/ClavinJune/bjora-project-terraform-modules.git?ref=v1.0.0"
 
   name               = "bjora-project-golang"
   description        = "bjora project golang"
