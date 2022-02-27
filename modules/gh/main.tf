@@ -16,10 +16,11 @@ resource "github_repository" "this" {
   allow_merge_commit     = false
   allow_rebase_merge     = false
   allow_auto_merge       = false
-  delete_branch_on_merge = true
   auto_init              = true
+  delete_branch_on_merge = true
   gitignore_template     = var.gitignore_template
   license_template       = "mit"
+  vulnerability_alerts   = true
 }
 
 resource "github_branch_default" "this" {
