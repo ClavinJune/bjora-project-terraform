@@ -49,3 +49,11 @@ module "bjora-project-golang" {
     }
   ]
 }
+
+module "bjora-project-golang-modules" {
+  source = "github.com/ClavinJune/bjora-project-terraform-modules.git?ref=v1.0.0"
+
+  name               = "bjora-project-golang-modules"
+  description        = "bjora project golang modules"
+  gitignore_template = "Go"
+}
